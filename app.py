@@ -177,6 +177,11 @@ def health():
 
 @app.route("/attention")
 def attention():
+    return jsonify({
+        "state_size": len(STATE),
+        "sample": STATE[:5]
+    })
+def attention():
     return jsonify({"signals": compute()})
 
 # -------------------------
